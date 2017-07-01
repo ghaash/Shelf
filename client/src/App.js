@@ -21,9 +21,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Route path="/" component={Navbar}/>
           <Route path="/welcome" component={Welcome}/>
-          <Route path="/books" component={Books}/>
+          <Route path="/books" component={Books} />
           <Route path="/addbook" component={AddBook}/>
           <Route path="/wishlists" component={Wishlists}/>
           <Route path="/addwishlist" component={AddWishlist}/>
@@ -36,18 +36,12 @@ class App extends Component {
     );
   }
 }
-
-const mapStateToProps = (state) => { 
-  return { books: state.books };
-};
-
-const mapDispatchToProps = () => {
-  return {
-    AddBook: AddBook
-  };
-};
  
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect()(App);
 
 // createBook={() = this.creatBook()}
 //createBook={this.createBook}
+
+//add mapStateToProps, mapDispatchToProps and connect() to the individual component files
+//use thunk for fetch requests
+//use actions for fetch requests too

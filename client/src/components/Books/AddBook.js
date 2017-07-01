@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class AddBook extends Component {
+class AddBook extends Component {
 
     constructor(props) {
         super(props) 
@@ -72,7 +73,7 @@ export default class AddBook extends Component {
 
                     <input 
                         type="submit"
-                        value="Add Book" />
+                        value="Add Book" />o0-9
                 </form>
                 
             </div>
@@ -80,3 +81,15 @@ export default class AddBook extends Component {
     }
 
 }
+
+const mapStateToProps = (state) => { 
+  return { books: state.books };
+};
+
+const mapDispatchToProps = () => {
+  return {
+    AddBook: AddBook
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddBook);
