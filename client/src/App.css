@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  /*background: #2980b9;*/
+  color: black
+}
+
+.body {
+  background: #2980b9;
+}
+
+.navbar {
+  color: black;
+  text-align: left;
+}
+ 
+.navbar-default {
+  color: black
+}
+
+.navbar-header {
+  color: black
+}
+
+/*.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/
+
+.book-div {
+  display: inline-block;
+  width: 45%;
+  height: 350px;
+  overflow: scroll;
+}
+
+.book-div img {
+  width: 50%;
+  height: 400px;
+}
