@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { AddBook as AddBookAction } from '../Actions/BookAction';
 
 class AddBook extends Component {
 
@@ -31,18 +32,18 @@ class AddBook extends Component {
         })
     }
 
-    handleOnSubmit(event) {
-        event.preventDefault();
-            this.props.store.dispatch({
-            type: 'ADD_BOOK',
-            book: this.state,
-        });
-    }
+    // handleOnSubmit(event) {
+    //     event.preventDefault();
+    //         this.props.store.dispatch({
+    //         type: 'ADD_BOOK',
+    //         book: this.state,
+    //     });
+    // }
 
     render() {
         return (
             <div className="addbook-form">
-                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                <form onSubmit={(event) => this.props.handleOnSubmit(event)}>
 
                     <p>
                         <label>Title:</label>
@@ -73,7 +74,7 @@ class AddBook extends Component {
 
                     <input 
                         type="submit"
-                        value="Add Book" />o0-9
+                        value="Add Book" />
                 </form>
                 
             </div>
@@ -84,12 +85,18 @@ class AddBook extends Component {
 
 const mapStateToProps = (state) => { 
   return { books: state.books };
-};
+}
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
+    console.log(dispatch);
   return {
-    AddBook: AddBook
+    handleOnSubmit:(event) => {
+        debugger
+        event.preventDefault();
+        dispatch(
+            AddBookAction()
+        );
+    }
   };
-};
-
+}
 export default connect(mapStateToProps, mapDispatchToProps)(AddBook);

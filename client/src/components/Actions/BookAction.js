@@ -1,3 +1,5 @@
+import uuid from 'uuid';
+
 const actions = {
     AddBook: (title, description, image_url) => {
         return {
@@ -6,6 +8,6 @@ const actions = {
             title, 
             description, 
             image_url
-        }
+        };
     }
 };
