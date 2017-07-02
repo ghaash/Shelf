@@ -49,8 +49,7 @@ export default class Wishlists extends Component {
     console.log(this.state.wishlists);
     return (
       <div className="Wishlists">
-                        <AddWishlist createWishlist={this.createWishlist}/>
-
+      <AddWishlist createWishlist={this.createWishlist}/>
         {this.state.wishlists.map((wishlist) => {
           return (
             <Wishlist id={wishlist.id} wishlist_title={wishlist.wishlist_title} wishlist_image_url={wishlist.wishlist_image_url} wishlist_description={wishlist.wishlist_description} />

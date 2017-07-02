@@ -19,6 +19,7 @@ class App extends Component {
 
   render() {
     return (
+      //add provider
       <Router>
         <div className="App">
           <Route path="/" component={Navbar}/>
