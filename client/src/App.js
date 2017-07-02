@@ -20,9 +20,9 @@ class App extends Component {
   render() {
     return (
       //add provider
-      <Router>
+      // <Router>
         <div className="App">
-          <Route path="/" component={Navbar}/>
+          <Navbar />
           <Route path="/welcome" component={Welcome}/>
           <Route path="/books" component={Books} />
           <Route path="/addbook" component={AddBook}/>
@@ -33,7 +33,7 @@ class App extends Component {
           <Route path="/about" component={About}/>
           <Route path="/github" component={Github}/> 
         </div>
-      </Router>
+      // </Router>
     );
   }
 }
