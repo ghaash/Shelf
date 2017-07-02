@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AddBook as AddBookAction } from '../Actions/BookAction';
 
+const Addbook = (props) => ()
+
 class AddBook extends Component {
 
     constructor(props) {
@@ -84,19 +86,18 @@ class AddBook extends Component {
 }
 
 const mapStateToProps = (state) => { 
-  return { books: state.books };
+  return { books: state.books }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    console.log(dispatch);
   return {
     handleOnSubmit:(event) => {
-        debugger
-        event.preventDefault();
+        
+        event.preventDefault()
         dispatch(
             AddBookAction()
-        );
+        )
     }
-  };
+  }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AddBook);
