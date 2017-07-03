@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { AddBook as AddBookAction } from '../Actions/BookAction';
 
 
 class AddBook extends Component {

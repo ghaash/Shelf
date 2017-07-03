@@ -30,7 +30,7 @@ export function createBook(newBook) {
          
         return {
             type: 'ADD_BOOK',
-            title, 
+            AddBook: title, 
             description, 
             image_url
         };
