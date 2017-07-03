@@ -12,6 +12,7 @@ import BookForm from './components/Books/BookForm';
 
 import './App.css';
 
+import reducers from "./reducers";
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
