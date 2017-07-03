@@ -1,7 +1,5 @@
 import Wishlist from './Wishlist';
 import AddWishlist from './AddWishlist';
-
-
 import React, { Component } from 'react';
 
 export default class Wishlists extends Component {

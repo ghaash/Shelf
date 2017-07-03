@@ -8,45 +8,33 @@ import Reviews from './components/Reviews/Reviews';
 import AddReview from './components/Reviews/AddReview';
 import About from './components/Miscellaneous/About';
 import Github from './components/Miscellaneous/Github';
-import BookForm from './components/Books/BookForm';
 
 import './App.css';
 
-import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 
-class App extends Component {
+export default class App extends Component {
 
   render() {
     return (
-      //add provider
-      // <Router>
+      <Router>
         <div className="App">
-          <Switch>
-            <Route path="/welcome" component={Welcome}/>
-            <Route path="/books" component={Books} />
-            <Route path="/addbook" component={AddBook}/>
-            <Route path="/wishlists" component={Wishlists}/>
-            <Route path="/addwishlist" component={AddWishlist}/>
-            <Route path="/reviews" component={Reviews}/>
-            <Route path="/addreview" component={AddReview}/>
-            <Route path="/about" component={About}/>
-            <Route path="/github" component={Github}/> 
-            <Route path="/BookForm" component={BookForm}/> 
-            <Routh path="/" component={Navbar}/>
-          </Switch>             
+          <Navbar/>
+            <Switch>
+              <Route path="/welcome" component={Welcome}/>
+              <Route path="/books" component={Books} />
+              <Route path="/books/new" component={AddBook}/>
+              <Route path="/wishlists" component={Wishlists}/>
+              <Route path="/wishlists/new" component={AddWishlist}/>
+              <Route path="/reviews" component={Reviews}/>
+              <Route path="/reviews/new" component={AddReview}/>
+              <Route path="/about" component={About}/>
+              <Route path="/github" component={Github}/> 
+            </Switch>             
         </div>
-      // </Router>
+      </Router>  
     );
   }
 }
  
-export default connect()(App);
-
-// createBook={() = this.creatBook()}
-//createBook={this.createBook}
-
-//add mapStateToProps, mapDispatchToProps and connect() to the individual component files
-//use thunk for fetch requests
-//use actions for fetch requests too

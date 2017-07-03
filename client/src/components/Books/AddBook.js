@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { AddBook as AddBookAction } from '../Actions/BookAction';
 
-
-class AddBook extends Component {
+export default class AddBook extends Component {
 
     constructor(props) {
         super(props) 
@@ -33,13 +30,10 @@ class AddBook extends Component {
         })
     }
 
-    // handleOnSubmit(event) {
-    //     event.preventDefault();
-    //         this.props.store.dispatch({
-    //         type: 'ADD_BOOK',
-    //         book: this.state,
-    //     });
-    // }
+    handleOnWishlistSubmit(event) {
+        event.preventDefault();
+        this.props.createWishlist(this.state)
+    }
 
     render() {
         return (
@@ -83,18 +77,3 @@ class AddBook extends Component {
     }
 
 }
-
-const mapStateToProps = (state) => { 
-  return { books: state.books }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleOnSubmit:(event) => {
-        console.log(event.target.value)     
-        dispatch({})
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddBook)

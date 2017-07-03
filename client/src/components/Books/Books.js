@@ -1,6 +1,5 @@
 import Book from './Book';
 import AddBook from './AddBook';
-
 import React, { Component } from 'react';
 
 export default class Books extends Component {
@@ -43,26 +42,17 @@ export default class Books extends Component {
     .catch(err => console.log("error is: ", err))
   }
 
-    // const mapStateToProps = (state) => { 
-    //   return { books: state.books };
-    // }
-
-    // const mapDispatchToProps = () => {
-    //   return {
-    //     AddBook: AddBook
-    //   };
-    // }
-
   render() {
     console.log(this.state.books);
     return (
       <div className="Books">
+        <AddBook createBook={this.createBook}/>
         {this.state.books.map((book) => {
           return (
             <Book id={book.id} title={book.title} image_url={book.image_url} description={book.description}/>
           )
         })} 
-      </div>
+      </div> 
     ); 
   }
 }

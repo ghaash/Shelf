@@ -6,9 +6,16 @@ export default class AddReview extends Component {
         super(props)
 
         this.state = {
+            title: '',
             stars: '',
             review: '',
         }
+    }
+
+    handleOnTitleChange(event) {
+        this.setState({
+            title: event.target.value
+        })
     }
 
     handleOnStarChange(event) {
@@ -16,23 +23,31 @@ export default class AddReview extends Component {
             stars: event.target.value
         })
     }
+
     handleOnReviewChange(event) {
         this.setState({
             review: event.target.value
         })
     }
-    handleOnSubmit(event) {
+
+    handleOnReviewSubmit(event) {
         event.preventDefault();
-        this.props.store.dispatch({
-            type: 'ADD_REVIEW',
-            review: this.state
-        });
+        this.props.createReview(this.state)
     }
 
     render () {
         return (
             <div className="addreview-form">
-                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                <form onSubmit={(event) => this.handleOnReviewSubmit(event)}>
+                    
+                    <p>
+                        <label>Title:</label>
+                        <input
+                            type="text"
+                            onChange={event => this.handleOnTitleChange(event)}
+                            value={this.state.title}
+                            placeholder="Book Title For Review Here" />
+                    </p>
 
                     <p>
                         <label>Stars:</label>
