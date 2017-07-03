@@ -21,27 +21,6 @@
   color: black
 }
 
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
-
 .book-div {
   display: inline-block;
   width: 45%;
@@ -50,6 +29,30 @@
 }
 
 .book-div img {
+  width: 50%;
+  height: 400px;
+}
+
+.wishlist-div {
+  display: inline-block;
+  width: 45%;
+  height: 350px;
+  overflow: scroll;
+}
+
+.wishlist-div img {
+  width: 50%;
+  height: 400px;
+}
+
+.review-div {
+  display: inline-block;
+  width: 45%;
+  height: 350px;
+  overflow: scroll;
+}
+
+.review-div img {
   width: 50%;
   height: 400px;
 }
