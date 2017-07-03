@@ -24,6 +24,7 @@ export default class Navbar extends Component {
                 <NavDropdown title="About">*/}
                     <NavItem><Link to="/about">About Me</Link></NavItem>
                     <NavItem><Link to="/github">Github</Link></NavItem>
+                    <NavItem><Link to="/BookForm">BookForm Test</Link></NavItem>
                 {/*</NavDropdown>*/}
             </Nav>
             </div>

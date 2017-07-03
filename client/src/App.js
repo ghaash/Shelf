@@ -8,11 +8,12 @@ import Reviews from './components/Reviews/Reviews';
 import AddReview from './components/Reviews/AddReview';
 import About from './components/Miscellaneous/About';
 import Github from './components/Miscellaneous/Github';
+import BookForm from './components/Books/BookForm';
 
 import './App.css';
 
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -22,16 +23,19 @@ class App extends Component {
       //add provider
       // <Router>
         <div className="App">
-          <Navbar />
-          <Route path="/welcome" component={Welcome}/>
-          <Route path="/books" component={Books} />
-          <Route path="/addbook" component={AddBook}/>
-          <Route path="/wishlists" component={Wishlists}/>
-          <Route path="/addwishlist" component={AddWishlist}/>
-          <Route path="/reviews" component={Reviews}/>
-          <Route path="/addreview" component={AddReview}/>
-          <Route path="/about" component={About}/>
-          <Route path="/github" component={Github}/> 
+          <Switch>
+            <Route path="/welcome" component={Welcome}/>
+            <Route path="/books" component={Books} />
+            <Route path="/addbook" component={AddBook}/>
+            <Route path="/wishlists" component={Wishlists}/>
+            <Route path="/addwishlist" component={AddWishlist}/>
+            <Route path="/reviews" component={Reviews}/>
+            <Route path="/addreview" component={AddReview}/>
+            <Route path="/about" component={About}/>
+            <Route path="/github" component={Github}/> 
+            <Route path="/BookForm" component={BookForm}/> 
+            <Routh path="/" component={Navbar}/>
+          </Switch>             
         </div>
       // </Router>
     );

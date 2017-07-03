@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AddBook as AddBookAction } from '../Actions/BookAction';
 
-const Addbook = (props) => ()
 
 class AddBook extends Component {
 
@@ -92,12 +91,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleOnSubmit:(event) => {
-        
-        event.preventDefault()
-        dispatch(
-            AddBookAction()
-        )
+        console.log(event.target.value)     
+        dispatch({})
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(AddBook);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddBook)
