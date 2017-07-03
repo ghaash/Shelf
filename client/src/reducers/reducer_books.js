@@ -1,4 +1,4 @@
-export default function manageBook(state = {
+export default function BooksReducer(state = {
   books: [],
 }, action) {
   switch (action.type) {

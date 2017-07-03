@@ -1,13 +1,10 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import { reducer as formReducer } from 'redux-form'
-
-import weather from './weather';
+import { combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
+import BooksReducer from "./reducer_books";
 
 const rootReducer = combineReducers({
-  form: formReducer,
-  routing: routerReducer,
-  weather
+  posts: BooksReducer,
+  form: formReducer
 });
 
 export default rootReducer;
