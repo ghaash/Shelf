@@ -23,19 +23,19 @@ class App extends Component {
       //add provider
       // <Router>
         <div className="App">
-          <Switch>
-            <Route path="/welcome" component={Welcome}/>
-            <Route path="/books" component={Books} />
-            <Route path="/addbook" component={AddBook}/>
-            <Route path="/wishlists" component={Wishlists}/>
-            <Route path="/addwishlist" component={AddWishlist}/>
-            <Route path="/reviews" component={Reviews}/>
-            <Route path="/addreview" component={AddReview}/>
-            <Route path="/about" component={About}/>
-            <Route path="/github" component={Github}/> 
-            <Route path="/BookForm" component={BookForm}/> 
-            <Routh path="/" component={Navbar}/>
-          </Switch>             
+          <Navbar />
+            <Switch>
+              <Route path="/welcome" component={Welcome}/>
+              <Route path="/books" component={Books} />
+              <Route path="/addbook" component={AddBook}/>
+              <Route path="/wishlists" component={Wishlists}/>
+              <Route path="/addwishlist" component={AddWishlist}/>
+              <Route path="/reviews" component={Reviews}/>
+              <Route path="/addreview" component={AddReview}/>
+              <Route path="/about" component={About}/>
+              <Route path="/github" component={Github}/> 
+              <Route path="/BookForm" component={BookForm}/> 
+            </Switch>
         </div>
       // </Router>
     );
