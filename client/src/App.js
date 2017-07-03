@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar/Navbar';
 import Welcome from './components/Miscellaneous/Welcome';
 import Books from './components/Books/Books';
-import BookForm from './components/Books/BookForm';
+import BooksNew from './components/Books/BooksNew';
 import Wishlists from './components/Wishlists/Wishlists';
 import AddWishlist from './components//Wishlists/AddWishlist';
 import Reviews from './components/Reviews/Reviews';
@@ -24,7 +24,7 @@ export default class App extends Component {
             <Switch>
               <Route path="/welcome" component={Welcome}/>
               <Route path="/books" component={Books} />
-              <Route path="/books/new" component={BookForm}/>
+              <Route path="/bookform" component={BooksNew}/>
               <Route path="/wishlists" component={Wishlists}/>
               <Route path="/wishlists/new" component={AddWishlist}/>
               <Route path="/reviews" component={Reviews}/>

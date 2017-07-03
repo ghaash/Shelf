@@ -11,7 +11,7 @@ export default class Navbar extends Component {
                     <NavItem><Link to="/welcome">Welcome</Link></NavItem>                
                     <NavDropdown title="Books">
                         <MenuItem><Link to="/books">Your Books</Link></MenuItem>
-                        <MenuItem><Link to="/books/new">Add A Book</Link></MenuItem>
+                        <MenuItem><Link to="/bookform">Add A Book</Link></MenuItem>
                     </NavDropdown>
                     <NavDropdown title="Wishlist">
                         <MenuItem><Link to="/wishlists">Your Wishlist</Link></MenuItem>
