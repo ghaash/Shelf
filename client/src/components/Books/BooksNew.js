@@ -17,7 +17,16 @@ class BooksNew extends Component {
   }
 
   onSubmit(values) {
-    this.props.createBook(values, () => {});
+    return fetch('/books', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(values) 
+        })
+        .then(response => response.json())
+        .then(book => console.warn(book))
+        .catch(err => console.log("Error of: ", err));
   }
 
   render() {
