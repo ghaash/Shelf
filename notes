@@ -1,0 +1,35 @@
+delete
+add button
+add onclick event
+onclick has a delete function using filter
+can make api request to delete as well
+
+onDeleteClick() {
+    const { id } = this.props.match.params;
+
+    this.props.deleteBook(id, () => {
+      this.props.history.push("/");
+    });
+  }
+
+deleteBook(book) {
+  var book = this.state.books;
+  var index = array.indexOf(e.target.value)
+  array.splice(index, 1);
+  this.setState({book: array });
+},
+
+createBook(newBook) {
+    return fetch('/books', {
+            method: 'DELETE', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newBook) 
+        })
+        .then(response => response.json())
+        .then(book => this.setState({
+          books: this.state.books.filter(book)
+        }))
+        .catch(err => console.log("Error of: ", err))
+  }

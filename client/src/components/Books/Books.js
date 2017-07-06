@@ -2,16 +2,27 @@ import Book from './Book';
 
 import React, { Component } from 'react';
 
+
 export default class Books extends Component {
 
   constructor() {
     super() 
 
     this.state = {
-      books: []
+      books: [],
+      counter: 0
     }
 
     this.createBook = this.createBook.bind(this)
+    this.handleOnUpVote = this.handleOnUpVote.bind(this)
+  }
+
+  handleOnUpVote(event) {
+    console.log("Hello, I'm getting logged")
+    //on click this button increments by one
+     this.setState({
+      counter: this.state.counter + 1
+    });
   }
 
   createBook(newBook) {
@@ -42,23 +53,21 @@ export default class Books extends Component {
     .catch(err => console.log("error is: ", err))
   }
 
-    // const mapStateToProps = (state) => { 
-    //   return { books: state.books };
-    // }
-
-    // const mapDispatchToProps = () => {
-    //   return {
-    //     AddBook: AddBook
-    //   };
-    // }
-
   render() {
     console.log(this.state.books);
     return (
       <div className="Books">
         {this.state.books.map((book) => {
           return (
+          <div>
             <Book id={book.id} title={book.title} image_url={book.image_url} description={book.description}/>
+            <h1>{this.state.counter}</h1>
+             <button 
+                onClick={this.handleOnUpVote} 
+                className="Upvote">
+                Upvote
+             </button>
+            </div>
           )
         })} 
       </div>
