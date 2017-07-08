@@ -15,6 +15,7 @@ export default class Books extends Component {
 
     this.createBook = this.createBook.bind(this)
     this.handleOnUpVote = this.handleOnUpVote.bind(this)
+    this.handleOnDownVote = this.handleOnDownVote.bind(this)
   }
 
   handleOnUpVote(event) {
@@ -22,6 +23,14 @@ export default class Books extends Component {
     //on click this button increments by one
      this.setState({
       counter: this.state.counter + 1
+    });
+  }
+
+  handleOnDownVote(event) {
+    console.log("Hello, I'm getting logged")
+    //on click this button increments by one
+     this.setState({
+      counter: this.state.counter - 1
     });
   }
 
@@ -62,6 +71,11 @@ export default class Books extends Component {
           <div>
             <Book id={book.id} title={book.title} image_url={book.image_url} description={book.description}/>
             <h1>{this.state.counter}</h1>
+            <button 
+                onClick={this.handleOnDownVote} 
+                className="Downvote">
+                Downvote
+             </button>
              <button 
                 onClick={this.handleOnUpVote} 
                 className="Upvote">
