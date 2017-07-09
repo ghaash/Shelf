@@ -27,5 +27,15 @@ export default class ISBN extends Component {
         .then(response => response.json())
         .then(books => this.setState({ books }))
         .catch(err => console.log("error is: ", err))
-  
+
+    render() {
+        return (
+            <div className="isbn-api">
+                <h1>ISBN API</h1>
+                    {this.state.books.map((book)
+                        <li key={book.id}>{book.title}, {book.summary}</li>
+                )}
+            </div>
+        )
+    }  
 }
