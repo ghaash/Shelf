@@ -32,7 +32,6 @@ export default class AddWishlist extends Component {
 
     handleOnWishlistSubmit(event) {
         event.preventDefault();
-        debugger
         this.props.createWishlist(this.state)
     }
 

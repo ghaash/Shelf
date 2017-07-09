@@ -1,6 +1,7 @@
 import Wishlist from './Wishlist';
 import AddWishlist from './AddWishlist';
-
+import MoveToBook from './MoveToBook';
+import Books from '../Books/Books'
 
 import React, { Component } from 'react';
 
@@ -11,7 +12,7 @@ export default class Wishlists extends Component {
 
     this.state = {
       wishlists: []
-    }
+    } 
 
     this.createWishlist = this.createWishlist.bind(this)
     
@@ -52,7 +53,10 @@ export default class Wishlists extends Component {
       <AddWishlist createWishlist={this.createWishlist}/>
         {this.state.wishlists.map((wishlist) => {
           return (
-            <Wishlist id={wishlist.id} wishlist_title={wishlist.wishlist_title} wishlist_image_url={wishlist.wishlist_image_url} wishlist_description={wishlist.wishlist_description} />
+            <div>
+              <Wishlist id={wishlist.id} wishlist_title={wishlist.wishlist_title} wishlist_image_url={wishlist.wishlist_image_url} wishlist_description={wishlist.wishlist_description} />
+              <MoveToBook />
+            </div>
           );
         })}
       </div>
