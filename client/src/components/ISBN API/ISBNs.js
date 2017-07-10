@@ -19,9 +19,11 @@ export default class ISBN extends Component {
     componentDidMount() {
         return fetch('http://isbndb.com/api/v2/json/3V7TNNZE/book/name_of_the_wind', {
             method: 'GET',
+            mode: 'no-cors',
             headers: {
                 'Accepts': 'application/json',
                 'Content-Type': 'application/json'
+                 
             },
         })
         .then(response => response.json())
