@@ -6,6 +6,7 @@ import Wishlists from './components/Wishlists/Wishlists';
 import AddWishlist from './components//Wishlists/AddWishlist';
 import Reviews from './components/Reviews/Reviews';
 import AddReview from './components/Reviews/AddReview';
+import ISBNs from './components/ISBN API/ISBNs';
 import About from './components/Miscellaneous/About';
 import Github from './components/Miscellaneous/Github';
 
@@ -29,6 +30,7 @@ export default class App extends Component {
               <Route path="/wishlists/new" component={AddWishlist}/>
               <Route path="/reviews" component={Reviews}/>
               <Route path="/reviews/new" component={AddReview}/>
+              <Route path="/api" component={ISBNs}/>
               <Route path="/about" component={About}/>
               <Route path="/github" component={Github}/> 
             </Switch>             

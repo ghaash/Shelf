@@ -21,6 +21,9 @@ export default class Navbar extends Component {
                         <MenuItem><Link to="/reviews">Your Reviews</Link></MenuItem>
                         <MenuItem><Link to="/reviews/new">Write a Review</Link></MenuItem>
                     </NavDropdown>
+                    <NavDropdown title="ISBN">
+                        <MenuItem><Link to="/api">Your Reviews</Link></MenuItem>
+                    </NavDropdown>
                     <NavDropdown title="About">
                         <MenuItem><Link to="/about">About Me</Link></MenuItem>
                         <MenuItem><Link to="/github">Github</Link></MenuItem>

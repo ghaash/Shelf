@@ -17,7 +17,7 @@ export default class ISBN extends Component {
     }
 
     componentDidMount() {
-        return fetch('http://isbndb.com/api/v2/json/3V7TNNZE/book/', {
+        return fetch('http://isbndb.com/api/v2/json/3V7TNNZE/book/name_of_the_wind', {
             method: 'GET',
             headers: {
                 'Accepts': 'application/json',
@@ -25,16 +25,21 @@ export default class ISBN extends Component {
             },
         })
         .then(response => response.json())
-        .then(books => this.setState({ books }))
+        .then(apis => this.setState({ apis }))
         .catch(err => console.log("error is: ", err))
+    }
 
     render() {
         return (
             <div className="isbn-api">
                 <h1>ISBN API</h1>
-                    {this.state.books.map((book)
-                        <li key={book.id}>{book.title}, {book.summary}</li>
-                )}
+                    {this.state.books.map((api) => {
+                        return (
+                            <div>
+                                <li key={api.id}>{api.title}, {api.summary}</li>
+                            </div>
+          );
+        })}
             </div>
         )
     }  
