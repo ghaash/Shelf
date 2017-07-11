@@ -1,7 +1,6 @@
 import Wishlist from './Wishlist';
 import AddWishlist from './AddWishlist';
 import MoveToBook from './MoveToBook';
-import Books from '../Books/Books'
 
 import React, { Component } from 'react';
 

@@ -11,6 +11,12 @@ export default class AddReview extends Component {
         }
     }
 
+    handleOnTitleChange(event) {
+        this.setState({
+            title: event.target.value
+        })
+    }
+
     handleOnStarChange(event) {
         this.setState({
             stars: event.target.value
@@ -33,6 +39,15 @@ export default class AddReview extends Component {
         return (
             <div className="addreview-form">
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
+
+                    <p>
+                        <label>Title:</label>
+                        <input
+                            type="text"
+                            onChange={event => this.handleOnTitleChange(event)}
+                            value={this.state.title}
+                            placeholder="Title here" />
+                    </p>
 
                     <p>
                         <label>Stars:</label>

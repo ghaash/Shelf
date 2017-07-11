@@ -5,14 +5,13 @@
 //what to do?
 
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
 
 export default class ISBN extends Component {
     constructor() {
         super()
 
         this.state = {
-            books: []
+            data: []
         }
     }
 
@@ -22,23 +21,24 @@ export default class ISBN extends Component {
             mode: 'no-cors',
             headers: {
                 'Accepts': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/text'
                  
             },
         })
         .then(response => response.json())
-        .then(apis => this.setState({ apis }))
+        .then(data => this.setState({ data }))
         .catch(err => console.log("error is: ", err))
     }
 
     render() {
+            console.log(this.state.data);
         return (
             <div className="isbn-api">
                 <h1>ISBN API</h1>
-                    {this.state.books.map((api) => {
+                    {this.state.data.map((data) => {
                         return (
                             <div>
-                                <li key={api.id}>{api.title}, {api.summary}</li>
+                                <li key={data.id}>{data.title}, {data.summary}</li>
                             </div>
           );
         })}
