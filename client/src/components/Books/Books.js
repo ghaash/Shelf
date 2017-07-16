@@ -18,21 +18,30 @@ export default class Books extends Component {
     this.handleOnDownVote = this.handleOnDownVote.bind(this)
   }
 
-  handleOnUpVote(bookId) {
-    console.log("Hello, I'm getting logged")
-    //on click this button increments by one
-     this.setState({
-      counter: this.state.counter + 1
+  // handleOnUpVote(bookId) {
+  //   if (bookId === book.id) {
+  //     books.counter: cou
+  //   }
+  //   console.log("Hello, I'm getting logged")
+  //   //on click this button increments by one
+  //    this.setState({
+  //     counter: this.state.counter + 1
+  //   });
+  // }
+
+  handleOnUpVote(event) {
+    this.setState({
+      counter: counter + 1,
     });
-    
   }
 
+
+
   handleOnDownVote(bookId, event) {
-    this.books[bookId].counter - 1
     console.log("Hello, I'm getting logged")
     //on click this button increments by one
      this.setState({
-      counter: this.state.counter - 1
+      counter: this.state.books.counter - 1
     });
   }
 
@@ -71,8 +80,15 @@ export default class Books extends Component {
         {this.state.books.map((book) => {
           return (
           <div >
-            <Book id={book.id} title={book.title} image_url={book.image_url} description={book.description}/>
-            <h1>{book.counter}</h1>
+            <Book 
+              id={book.id} 
+              title={book.title} 
+              image_url={book.image_url} 
+              description={book.description} 
+              votes={book.votes}
+              onVote={this.handleBookUpVote}
+            />
+            {/*<h1>{book.counter}</h1>
             <button 
                 onClick={this.handleOnDownVote.bind(this, book.id)} 
                 className="Downvote">
@@ -82,7 +98,7 @@ export default class Books extends Component {
                 onClick={this.handleOnUpVote} 
                 className="Upvote">
                 Upvote
-             </button>
+             </button>*/}
             </div>
           )
         })} 
