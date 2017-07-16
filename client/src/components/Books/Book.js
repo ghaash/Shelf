@@ -18,7 +18,7 @@ export default class Book extends Component {
  handleOnUpVote(event) {
     console.log("I'm getting clicked")
     this.setState({
-      counter: this.state.counter + 1,
+      counter: this.state.books.counter + 1,
     });
   }
 
@@ -95,12 +95,12 @@ export default class Book extends Component {
               <p>Description: {book.description}</p>
               <h1>{this.state.counter}</h1>
             <button 
-                onClick={this.handleOnDownVote} 
+                onClick={this.state.books.handleOnDownVote} 
                 className="Downvote">
                 Downvote
              </button>
              <button 
-                onClick={this.handleOnUpVote} 
+                onClick={this.state.books.handleOnUpVote} 
                 className="Upvote">
                 Upvote
              </button>
