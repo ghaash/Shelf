@@ -1,0 +1,1 @@
+I don't know how to do it on the front end, but on the back I could add votes to the book table, makea  few functions to handle the upvote. Post request and a counter to handle it.
