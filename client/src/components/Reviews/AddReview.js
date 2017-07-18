@@ -6,6 +6,7 @@ export default class AddReview extends Component {
         super(props)
 
         this.state = {
+            title: '',
             stars: '',
             review: '',
         }
@@ -27,18 +28,15 @@ export default class AddReview extends Component {
             review: event.target.value
         })
     }
-    handleOnSubmit(event) {
+    handleOnReviewSubmit(event) {
         event.preventDefault();
-        this.props.store.dispatch({
-            type: 'ADD_REVIEW',
-            review: this.state
-        });
+        this.props.createReview(this.state)
     }
 
     render () {
         return (
             <div className="addreview-form">
-                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                <form onSubmit={(event) => this.handleOnReviewSubmit(event)}>
 
                     <p>
                         <label>Title:</label>
@@ -54,7 +52,7 @@ export default class AddReview extends Component {
                         <input
                             type="text"
                             onChange={event => this.handleOnStarChange(event)}
-                            value={this.state.star}
+                            value={this.state.stars}
                             placeholder="Choose 1, 2, 3, 4 or 5 stars" />
                     </p>
 
