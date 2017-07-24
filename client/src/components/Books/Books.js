@@ -10,50 +10,9 @@ export default class Books extends Component {
 
     this.state = {
       books: [],
-      counter: 0,
     }
 
     this.createBook = this.createBook.bind(this)
-    this.handleOnUpVote = this.handleOnUpVote.bind(this)
-    this.handleOnDownVote = this.handleOnDownVote.bind(this)
-    this.handleUpVote = this.handleUpVote.bind(this)
-  }
-
-
-
-  handleOnUpVote(event) {
-    console.log("Hello, I'm getting logged")
-    //on click this button increments by one
-     this.setState({
-      counter: this.book.votes + 1
-    });
-  }
-
-  handleOnDownVote(event) {
-    console.log("Hello, I'm getting logged")
-    //on click this button increments by one
-     this.setState({
-      counter: this.book.votes - 1
-    });
-  }
-
-  handleUpVote() {
-    this.props.onVote(this.props.id);
-  }
-
-  handleBookUpVote(bookId) {
-    const nextBooks = this.state.books.map((book) => {
-      if (book.id === bookId) {
-        return Object.assign({}, book, {
-          votes: book.votes + 1,
-        });
-      } else {
-        return book;
-      }
-    });
-    this.setState({
-      books: nextBooks,
-    });
   }
 
   createBook(newBook) {
@@ -85,7 +44,6 @@ export default class Books extends Component {
   }
 
   render() {
-    console.log(this.state.books);
     return (
       <div className="Books">
         {this.state.books.map((book) => {
@@ -96,19 +54,9 @@ export default class Books extends Component {
                   image_url={book.image_url} 
                   description={book.description}
                   votes={book.votes} 
-                  onVote={this.handleBookUpVote}/>
-            <h1>{this.state.counter} {this.props.votes}</h1>
-            <button 
-                onClick={this.handleOnDownVote} 
-                className="Downvote">
-                Downvote
-             </button>
-             <button 
-                onClick={this.handleUpVote} 
-                className="Upvote">
-                Upvote
-             </button>
-            </div>
+                  />
+
+          </div>
           )
         })} 
       </div>

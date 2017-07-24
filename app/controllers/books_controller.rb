@@ -1,6 +1,13 @@
 class BooksController < ApplicationController
     def index
-        render json: Book.all
+        render json: Book.all.map{|b| {
+                                        id: b.id, 
+                                        title: b.title, 
+                                        image_url: b.image_url,
+                                        votes: b.upvote_count,
+                                        description: b.description
+                                      }
+                                 }
     end
     
     def create
