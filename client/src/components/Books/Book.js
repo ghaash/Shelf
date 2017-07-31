@@ -14,16 +14,43 @@ export default class Book extends Component {
     this.handleUpvote = this.handleUpvote.bind(this)
   }
 
-  handleUpvote(){
-    // actually fire AJAX to update the server
-    // debugger
-    // this.state.votes = this.state.votes + 1
-    // this.setState({votes: this.state.votes})
-    // // Correct
-    this.setState((prevState, props) => ({
-      votes: prevState.votes + 1
-    }));
+  // handleUpvote(){
+  //   // // actually fire AJAX to update the server
+  //   // PATCH /books/1?vote=up
+  //   // PATCH
+  //   // // debugger
+  //   // // this.state.votes = this.state.votes + 1
+  //   // // this.setState({votes: this.state.votes})
+  //   // // // Correct
+  //   this.setState((prevState, props) => ({
+  //     votes: prevState.votes + 1
+  //   }));
+  // }
+
+  handleUpvote() {
+    return fetch('/books', {
+      method: 'PATCH',
+      headers: {
+        'Accepts': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => response.json())
+    // .then(books => this.setState((prevState, props) => ({votes: prevState.votes + 1}))
   }
+
+  // componentDidMount() {
+  //   return fetch('/books', {
+  //     method: 'GET', 
+  //     headers: {
+  //       'Accepts': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //   })
+  //   .then(response => response.json())
+  //   .then(books => this.setState({ books }))
+  //   .catch(err => console.log("error is: ", err))
+  // }
 
   render() {
     return(
@@ -56,7 +83,7 @@ export default class Book extends Component {
 //     });
 //   }
 
-    // this.handleOnUpVote = this.handleOnUpVote.bind(this)
-    // this.handleOnDownVote = this.handleOnDownVote.bind(this)
+// this.handleOnUpVote = this.handleOnUpVote.bind(this)
+// this.handleOnDownVote = this.handleOnDownVote.bind(this)
 
    
