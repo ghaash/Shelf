@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20170717231529) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.integer  "votes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "votes",       default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "reviews", force: :cascade do |t|

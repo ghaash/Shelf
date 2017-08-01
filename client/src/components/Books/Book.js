@@ -11,7 +11,7 @@ export default class Book extends Component {
     // this.state.image_url = props.image_url
     // this.state.description = props.description
 
-    this.handleUpvote = this.handleUpvote.bind(this)
+    // this.handleUpvote = this.handleUpvote.bind(this)
   }
 
   // handleUpvote(){
@@ -27,21 +27,25 @@ export default class Book extends Component {
   //   }));
   // }
 
-  handleUpvote() {
-    return fetch('/books', {
+
+  handleUpvote = () => {
+    const dataObj = {votes: this.state.votes + 1}
+    console.log(this)
+    return fetch(`/books/${this.state.id}`, {
       method: 'PATCH',
       headers: {
         'Accepts': 'application/json',
         'Content-Type': 'application/json'
       },
+      body: JSON.stringify(dataObj)
     })
     .then(response => response.json())
-    // .then(books => this.setState((prevState, props) => ({votes: prevState.votes + 1}))
-  }
+    .then(book => this.setState({votes: book.votes}))
+  } 
 
   // componentDidMount() {
   //   return fetch('/books', {
-  //     method: 'GET', 
+  //     method: 'GET',  jkhl
   //     headers: {
   //       'Accepts': 'application/json',
   //       'Content-Type': 'application/json'
