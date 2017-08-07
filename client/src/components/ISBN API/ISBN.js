@@ -7,4 +7,4 @@ const ISBN = ({ id, title, summary}) => (
     </div>
 )
 
-export default ISBNgi;
+export default ISBN;

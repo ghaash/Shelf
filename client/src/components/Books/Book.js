@@ -9,21 +9,31 @@ export default class Book extends Component {
 
   handleUpvote = () => {
     const dataObj = {votes: this.state.votes + 1}
-    console.log(this)
-    return fetch(`/books/${this.state.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Accepts': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(dataObj)
-    })
-    .then(response => response.json())
-    .then(book => this.setState({votes: book.votes}))
-  } 
+    if (this.state.votes < 0){
+      console.log("books cannot go below 0!")
+    }
+    
+    else if (this.state.votes >= 0){
+      console.log("books can be upvoted from 0 or higher")
+    
+      return fetch(`/books/${this.state.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Accepts': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataObj)
+      })
+      .then(response => response.json())
+      .then(book => this.setState({votes: book.votes}))
+  }}
 
   handleDownvote = () => {
     const dataObj = {votes: this.state.votes - 1}
+     if (this.state.votes <= 0){
+      console.log("books cannot go below 0!")
+    }
+    else if (this.state.votes >= 0) {
     console.log(this)
     return fetch(`/books/${this.state.id}`, {
       method: 'PATCH',
@@ -35,7 +45,7 @@ export default class Book extends Component {
     })
     .then(response => response.json())
     .then(book => this.setState({votes: book.votes}))
-  } 
+  }} 
 
 
   render() {
